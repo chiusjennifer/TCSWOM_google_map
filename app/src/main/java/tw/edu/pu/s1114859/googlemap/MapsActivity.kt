@@ -37,10 +37,21 @@ internal class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
         mMap.addMarker(MarkerOptions()
-            .position(sydney)
-            .title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+            .position()
+            .title("財團法人基督教惠明盲人福利基金會"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng())
+    }
+    data class Location(val latitude: Double, val longitude: Double)object Locations {
+        val Huiming = Location(24.22, 120.66)
+        val Genius = Location( 24.15, 120.68)
+        val Maria = Location( 24.19, 120.65)
+        val Fuyu = Location( 24.16, 120.63)
+        val Up = Location( 24.13, 120.66)
+        val Zhengfeng = Location( 24.05, 120.69)
+        val Renai = Location( 24.13, 120.65)
+    }
+    data class mapName(val mName:String){
+        val Huiming = mapName("")
     }
 }
